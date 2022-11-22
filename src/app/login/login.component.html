@@ -11,15 +11,15 @@
         <div class="form-field d-flex align-items-center">
             <span class="far fa-user"></span>
             <!-- <input type="text"       (change)="acnoChange($event)"   name="Accno" id="Accno" [placeholder]="account"> -->
-            <input type="text"      #acno  name="Accno" id="Accno" [placeholder]="account">
+            <input type="text"      [(ngModel)]="acno"  name="Accno" id="Accno" [placeholder]="account">
       
         </div>
         <div class="form-field d-flex align-items-center">
             <span class="fas fa-key"></span>
-            <input type="password" #pswd name="password" id="pwd" placeholder="Password">
+            <input type="password" [(ngModel)]="pswd"   name="password" id="pwd" placeholder="Password">
             <!-- <input type="password" (change)="pswdChange($event)" name="password" id="pwd" placeholder="Password"> -->
         </div>
-        <button class="btn mt-3" (click)="Userlogin(acno,pswd)">Login</button>
+        <button class="btn mt-3" (click)="Userlogin()">Login</button>
     </form>
     <div class="text-center fs-6">
         <a href="#">Forget password?</a> or <a href="#">Sign up</a>

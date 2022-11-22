@@ -35,26 +35,9 @@ export class LoginComponent {
     1003:{acno:1003,username:"malu",password:1003,balance:1000},
   }
 
-  // Userlogin(){
-  //   var acno=this.acno;
-  //   var pswd=this.pswd;
-  //   var userDetails=this.userDetails;
-
-  //   if(acno in  userDetails){
-  //     if(pswd==userDetails[acno]['password']){
-  //       alert('login Succesful');
-  //     }
-  //     else{
-  //       alert('Invalid password');
-  //     }
-  //   }
-  //   else{
-  //     alert('Invalid user details')
-  //   }
-  // }
-  Userlogin(a:any,p:any){
-    var acno=a.value;
-    var pswd=p.value;
+  Userlogin(){
+    var acno=this.acno;
+    var pswd=this.pswd;
     var userDetails=this.userDetails;
 
     if(acno in  userDetails){
@@ -69,5 +52,22 @@ export class LoginComponent {
       alert('Invalid user details')
     }
   }
+  // Userlogin(a:any,p:any){
+  //   var acno=a.value;
+  //   var pswd=p.value;
+  //   var userDetails=this.userDetails;
+
+  //   if(acno in  userDetails){
+  //     if(pswd==userDetails[acno]['password']){
+  //       alert('login Succesful');
+  //     }
+  //     else{
+  //       alert('Invalid password');
+  //     }
+  //   }
+  //   else{
+  //     alert('Invalid user details')
+  //   }}
+ 
 
 }
