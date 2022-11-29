@@ -19,9 +19,9 @@
             <input type="password" [(ngModel)]="pswd"   name="password" id="pwd" placeholder="Password">
             <!-- <input type="password" (change)="pswdChange($event)" name="password" id="pwd" placeholder="Password"> -->
         </div>
-        <button class="btn mt-3" (click)="Userlogin()">Login</button>
+        <button class="btn mt-3" (click)="login()">Login</button>
     </form>
     <div class="text-center fs-6">
-        <a href="#">Forget password?</a> or <a href="#">Sign up</a>
+        <a href="#">Forget password?</a> or <a routerLink="register">Sign up</a>
     </div>
 </div>

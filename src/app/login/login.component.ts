@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -7,12 +9,15 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+
+constructor(private ds:DataService,private router:Router){
+
+}
+
+
   aim="Your perfect banking partner";
   account="Enter your Account here";
 
-  login(){
-    alert('Login Clicked');
-  }
   acno='';
   acnoChange(event:any){
     console.log(event);
@@ -29,24 +34,17 @@ export class LoginComponent {
   }
 
 
-  userDetails:any={
-    1000:{acno:1000,username:"Arun",password:1000,balance:1000},
-    1001:{acno:1001,username:"sree",password:1001,balance:1000},
-    1003:{acno:1003,username:"malu",password:1003,balance:1000},
-  }
+  
 
-  Userlogin(){
+   login(){
     var acno=this.acno;
     var pswd=this.pswd;
-    var userDetails=this.userDetails;
+    var userDetails=this.ds.userDetails;
 
-    if(acno in  userDetails){
-      if(pswd==userDetails[acno]['password']){
-        alert('login Succesful');
-      }
-      else{
-        alert('Invalid password');
-      }
+    const result=this.ds.login(acno,pswd)
+    if(result){
+      alert('Login successful');
+      this.router.navigateByUrl('dashboard')
     }
     else{
       alert('Invalid user details')

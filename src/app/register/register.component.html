@@ -5,22 +5,22 @@
     <div class="text-center mt-2 name">
         My Bank
     </div>
-    <form class="p-3 mt-3">
+    <form class="p-3 mt-3" [formGroup]="registerForm">
         <div class="form-field d-flex align-items-center">
             <span class="far fa-user"></span>
-            <input type="text" name="username" id="username" placeholder="Username">
+            <input type="text"    formControlName="uname"  name="username"  placeholder="Username">
         </div>
         <div class="form-field d-flex align-items-center">
             <span class="far fa-user"></span>
-            <input type="text" name="Accno" id="Accno" placeholder="Account number">
+            <input type="text" name="acc no" formControlName="acno"  placeholder="Account number">
         </div>
         <div class="form-field d-flex align-items-center">
             <span class="fas fa-key"></span>
-            <input type="password" name="password" id="pwd" placeholder="Password">
-        </div>
-        <button class="btn mt-3">Register</button>
+            <input type="password" name="password"   formControlName="pswd"   placeholder="Password">
+        </div> 
+        <button class="btn mt-3"   (click)="register()"  >Register</button>
     </form>
     <div class="text-center fs-6">
-         <a href="#">Sign in</a>
+         <a routerLink="">Sign in</a>
     </div>
 </div>
